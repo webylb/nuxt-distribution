@@ -27,6 +27,7 @@
 <script>
 import AppLogo from '~/components/AppLogo.vue'
 import { $axios } from '~/plugins/axios.js'
+import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
   components: {
@@ -34,10 +35,31 @@ export default {
   },
   async asyncData () {
     let { data } = await $axios('/api/content/queryBoardList','post')
-    console.log(data)
+    console.log("asyncData|"+ data)
     return { users: data.data }
+  },
+  computed: {
+    ...mapState(['testData'])
+  },
+  created () {
+    this.pageInit();
+  },
+  data () {
+    return {
+      testItem: false, // 测试数据
+    }
+  },
+  methods:{
+    ...mapMutations(['TESTDATA']),
+    ...mapActions(['getTestData']),
+    pageInit(){
+      console.log("init...");
+      this.getTestData().then(res => {
+        console.log("获取数据完成了");
+      });
+    }
   }
-}
+}  
 </script>
 
 <style>

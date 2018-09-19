@@ -7,7 +7,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'vue vuex nuxt element axios' }
+      { hid: 'description', name: 'description', content: 'vue vuex nuxt element axios' },
+      { 'http-equiv': 'pragma', content: 'no-cache' },
+      { 'http-equiv': 'cache-control', content: 'no-cache' },
+      { 'http-equiv': 'expires', content: '0' },
+      { content: 'telephone=no', name: 'format-detection' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -21,9 +25,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'assets/main.css'
   ],
-
   /*
   ** Add element-ui in our app, see plugins/element-ui.js file
   */
@@ -31,7 +35,6 @@ module.exports = {
     '@/plugins/element-ui'
   ],
   modules: [
-
     // 代理模块
     // '@nuxtjs/axios',
     // '@nuxtjs/proxy'
