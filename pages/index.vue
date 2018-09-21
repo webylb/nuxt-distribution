@@ -43,6 +43,7 @@ export default {
   },
   created () {
     this.pageInit();
+    // console.log(this.$route.query);
   },
   data () {
     return {

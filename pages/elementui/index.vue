@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 500px; border: 1px solid #eee">
+  <el-container class="test" style="height: auto; border: 1px solid #eee">
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
       <el-menu :default-openeds="['1', '3']">
         <el-submenu index="1">
@@ -91,6 +91,7 @@
 
 <script>
   export default {
+    name:"elementTemplate",
     data() {
       const item = {
         date: '2016-05-02',
@@ -98,7 +99,7 @@
         address: 'No. 189, Grove St, Los Angeles'
       };
       return {
-        tableData: Array(20).fill(item)
+        tableData: new Array(20).fill(item)
       }
     }
   };
