@@ -45,6 +45,10 @@ export default {
     this.pageInit();
     // console.log(this.$route.query);
   },
+  mounted () {
+    console.log(this.comsys.val(1));
+    console.log(this.comsys.name);
+  },
   data () {
     return {
       testItem: false, // 测试数据

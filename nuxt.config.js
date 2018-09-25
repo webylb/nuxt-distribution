@@ -32,7 +32,8 @@ module.exports = {
   ** Add element-ui in our app, see plugins/element-ui.js file
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    { src: '~/plugins/commom.js', ssr: false }
   ],
   modules: [
     // 代理模块
