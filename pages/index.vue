@@ -17,7 +17,11 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
+        <br />
+        <nuxt-link :to="{ name:'products-id', params:{ id:'1'}}">product1</nuxt-link>
+        <br />
         <nuxt-link to="/login"> Login </nuxt-link>
+        <br />
         <nuxt-link to="/elementui"> Elementui </nuxt-link>
       </div>
     </div>
@@ -30,6 +34,7 @@ import { $axios } from '~/plugins/axios.js'
 import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
+  name:"home",
   components: {
     AppLogo
   },
@@ -67,7 +72,7 @@ export default {
 }  
 </script>
 
-<style>
+<style scope>
 .container {
   min-height: 100vh;
   display: flex;
